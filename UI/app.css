@@ -22,6 +22,23 @@ body {
 .custom-circle-image {
   width: 10vw;
   height: 10vw;
+  box-shadow: 0 0 5px 5px green;
+}
+
+.cci1{
+  box-shadow: 0 0 5px 5px red;
+}
+
+.cci2{
+  box-shadow: 0 0 5px 5px blue;
+}
+
+.cci3{
+  box-shadow: 0 0 5px 5px yellow;
+}
+
+.cci4{
+  box-shadow: 0 0 5px 5px purple;
 }
 
 .custom-circle-image img {
@@ -29,7 +46,8 @@ body {
 }
 
 .card-title {
-  letter-spacing: 1.1px;
+  /* letter-spacing: 1.1px; */
+  font-size: calc(1vw + 1vh);
 }
 
 .card-text {

@@ -19,39 +19,54 @@ function init() {
         let imageData = file.dataURL;
         
         var url = "http://127.0.0.1:8888/classify_image";
-
+        $("#resultHolder0").hide();
+        $("#divClassTable0").hide(); 
+        $("#resultHolder1").hide();            
+        $("#divClassTable1").hide();
+        $("#resultHolder2").hide();               
+        $("#divClassTable2").hide();
         $.post(url, {
             image_data: imageData
         },function(data, status) {
-            console.log(data);
+            console.log("before slice: " + data);
             if (!data || data.length==0) {
-                $("#resultHolder").hide();
-                $("#divClassTable").hide();                
+                $("#resultHolder0").hide();
+                $("#divClassTable0").hide(); 
+                $("#resultHolder1").hide();             
+                $("#divClassTable1").hide();
+                $("#resultHolder2").hide();              
+                $("#divClassTable2").hide();           
                 $("#error").show();
                 return;
             }
-            let players = ["chuck_berry", "eminem", "justin_bieber", "madonna", "whitney_houston"];
-            
-            let match = null;
+            let musicians = ["chuck_berry", "eminem", "justin_bieber", "madonna", "whitney_houston"];
+            let maxScoreForThisClass = [];
+            let match = [];
             let bestScore = -1;
+            if(data.length > 3){
+                data = data.slice(0, 3);
+            }
+            console.log("after slice: " + data)
             for (let i=0;i<data.length;++i) {
-                let maxScoreForThisClass = Math.max(...data[i].class_probability);
-                if(maxScoreForThisClass>bestScore) {
-                    match = data[i];
-                    bestScore = maxScoreForThisClass;
+                maxScoreForThisClass.push(Math.max(...data[i].class_probability));
+                if(maxScoreForThisClass[i]>bestScore) {
+                    match.push(data[i]);
+                    bestScore = maxScoreForThisClass[i];
                 }
             }
-            if (match) {
-                $("#error").hide();
-                $("#resultHolder").show();
-                $("#divClassTable").show();
-                $("#resultHolder").html($(`[data-player="${match.class}"`).html());
-                let classDictionary = match.class_dictionary;
-                for(let personName in classDictionary) {
-                    let index = classDictionary[personName];
-                    let proabilityScore = match.class_probability[index];
-                    let elementName = "#score_" + personName;
-                    $(elementName).html(proabilityScore);
+            if (match.length != 0) {
+                for(let el=0;el<match.length;el++){
+                    $("#error").hide();
+                    $("#resultHolder"+el).show();
+                    $("#divClassTable"+el).show();
+                    $("#resultHolder"+el).html($(`[data-player="${match[el].class}"`).html());
+                    let classDictionary = match[el].class_dictionary;
+                    for(let personName in classDictionary) {
+                        let index = classDictionary[personName];
+                        let probabilityScore = match[el].class_probability[index];
+                        let elementName = "#score_" + personName + "_" + el;
+                        $(elementName).html(probabilityScore);
+                    }
                 }
             }           
         });
@@ -65,8 +80,12 @@ function init() {
 $(document).ready(function() {
     console.log( "ready!" );
     $("#error").hide();
-    $("#resultHolder").hide();
-    $("#divClassTable").hide();
+    $("#resultHolder0").hide();
+    $("#divClassTable0").hide();
+    $("#resultHolder1").hide();
+    $("#divClassTable1").hide();
+    $("#resultHolder2").hide();
+    $("#divClassTable2").hide();
 
     init();
 });

@@ -19,7 +19,7 @@
         <div class="row">
         <div class="col card-wrapper" data-player="chuck_berry">
                 <div class="card border-0">
-                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image cci0">
                         <img class="w-100 h-100" src="./images/chuck_berry.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-4">
@@ -30,7 +30,7 @@
             </div>            
             <div class="col card-wrapper" data-player="eminem">
                     <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image cci1">
                             <img class="w-100 h-100" src="./images/eminem.jpg" alt="Card image cap">
                         </div>
                         <div class="card-body text-center mt-4">
@@ -41,7 +41,7 @@
             </div>            
             <div class="col card-wrapper" data-player="justin_bieber">
                     <div class="card border-0">
-                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image cci2">
                             <img class="w-100 h-100" src="./images/justin_bieber.jpg" alt="Card image cap">
                         </div>
                         <div class="card-body text-center mt-4">
@@ -53,7 +53,7 @@
 
             <div class="col card-wrapper" data-player="madonna">
                 <div class="card border-0">
-                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image cci3">
                         <img class="w-100 h-100" src="./images/madonna.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-4">
@@ -65,7 +65,7 @@
 
             <div class="col card-wrapper" data-player="whitney_houston">
                 <div class="card border-0">
-                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image cci4">
                         <img class="w-100 h-100" src="./images/whitney_houston.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body text-center mt-4">
@@ -100,9 +100,8 @@
                 <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
             </div>
 
-            <div class="col-sm-4" id="resultHolder">
-            </div>
-            <div class="col-sm-4" id="divClassTable">
+            <div class="col-sm-4" id="resultHolder0"></div>
+            <div class="col-sm-4 divClassTable" id="divClassTable0">
                 <table id="classTable">
                         <tr>
                             <th>Musician</th>
@@ -110,27 +109,87 @@
                         </tr>
                         <tr>
                             <td>Chuck Berry</td>
-                            <td id="score_chuck_berry"></td>
+                            <td id="score_chuck_berry_0"></td>
                         </tr>
                         <tr>
                             <td>Eminem</td>
-                            <td id="score_eminem"></td>
+                            <td id="score_eminem_0"></td>
                         </tr>
                         <tr>
                             <td>Justin Bieber</td>
-                            <td id="score_justin_bieber"></td>
+                            <td id="score_justin_bieber_0"></td>
                         </tr>
                         <tr>
                             <td>Madonna</td>
-                            <td id="score_madonna"></td>
+                            <td id="score_madonna_0"></td>
                         </tr>
                         <tr>
                             <td>Whitney Houston</td>
-                            <td id="score_whitney_houston"></td>
+                            <td id="score_whitney_houston_0"></td>
                         </tr>
                 </table>
             </div>
-            
+
+            <div class="col-sm-4" id="resultHolder1"></div>
+            <div class="col-sm-4 divClassTable" id="divClassTable1">
+                <table id="classTable">
+                        <tr>
+                            <th>Musician</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Chuck Berry</td>
+                            <td id="score_chuck_berry_1"></td>
+                        </tr>
+                        <tr>
+                            <td>Eminem</td>
+                            <td id="score_eminem_1"></td>
+                        </tr>
+                        <tr>
+                            <td>Justin Bieber</td>
+                            <td id="score_justin_bieber_1"></td>
+                        </tr>
+                        <tr>
+                            <td>Madonna</td>
+                            <td id="score_madonna_1"></td>
+                        </tr>
+                        <tr>
+                            <td>Whitney Houston</td>
+                            <td id="score_whitney_houston_1"></td>
+                        </tr>
+                </table>
+            </div>
+
+            <div class="col-sm-4" id="resultHolder2"></div>
+            <div class="col-sm-4 divClassTable" id="divClassTable2">
+                <table id="classTable">
+                        <tr>
+                            <th>Musician</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Chuck Berry</td>
+                            <td id="score_chuck_berry_2"></td>
+                        </tr>
+                        <tr>
+                            <td>Eminem</td>
+                            <td id="score_eminem_2"></td>
+                        </tr>
+                        <tr>
+                            <td>Justin Bieber</td>
+                            <td id="score_justin_bieber_2"></td>
+                        </tr>
+                        <tr>
+                            <td>Madonna</td>
+                            <td id="score_madonna_2"></td>
+                        </tr>
+                        <tr>
+                            <td>Whitney Houston</td>
+                            <td id="score_whitney_houston_2"></td>
+                        </tr>
+                </table>
+            </div>
+
         </div>
 
     </div>
