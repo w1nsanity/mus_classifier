@@ -46,7 +46,7 @@ body {
 }
 
 .card-title {
-  /* letter-spacing: 1.1px; */
+  letter-spacing: calc((1vw + 1vh) * 0.01);
   font-size: calc(1vw + 1vh);
 }
 
@@ -66,24 +66,50 @@ body {
   font-family: MerriweatherRegular;
   font-size: 30px;
   line-height: initial;
-  color: blue;
+  color: #cdc6c3;
   text-align: center;
 }
 
-#classTable {
+#classTable0, #classTable1, #classTable2 {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#classTable td, #classTable th {
+#classTable0 > td , #classTable1 > td , #classTable2 > td {
   border: 1px solid #cdc6c3;
   padding: 8px;
 }
 
-#classTable th {
+#classTable0 > th, #classTable1 > th, #classTable2 > th {
+  border: 1px solid #cdc6c3;
+  padding: 8px;
+}
+
+#classTable0 > th, #classTable1 > th, #classTable2 > th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: #5E5E5E;
+}
+
+.ct_cb th {
+  background-color: green !important;
+}
+
+.ct_em th {
+  background-color: red !important;
+}
+
+.ct_jb th {
+  background-color: blue !important;
+}
+
+.ct_ma th {
+  background-color: yellow !important;
+  color: black;
+}
+
+.ct_wh th {
+  background-color: purple !important;
 }

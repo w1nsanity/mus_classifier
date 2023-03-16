@@ -28,7 +28,7 @@ function init() {
         $.post(url, {
             image_data: imageData
         },function(data, status) {
-            console.log("before slice: " + data);
+            console.log(data);
             if (!data || data.length==0) {
                 $("#resultHolder0").hide();
                 $("#divClassTable0").hide(); 
@@ -46,7 +46,7 @@ function init() {
             if(data.length > 3){
                 data = data.slice(0, 3);
             }
-            console.log("after slice: " + data)
+            console.log(data)
             for (let i=0;i<data.length;++i) {
                 maxScoreForThisClass.push(Math.max(...data[i].class_probability));
                 if(maxScoreForThisClass[i]>bestScore) {
@@ -55,7 +55,21 @@ function init() {
                 }
             }
             if (match.length != 0) {
+                let ct = []
+                console.log(ct);
                 for(let el=0;el<match.length;el++){
+                    ct.push(document.getElementById("classTable"+el));
+                    if(match[el].class == 'chuck_berry'){
+                        ct[el].className = "ct_cb";
+                    } else if (match[el].class == 'eminem') {
+                        ct[el].className = "ct_em";
+                    } else if (match[el].class == 'justin_bieber') {
+                        ct[el].className = "ct_jb";
+                    } else if (match[el].class == 'madonna') {
+                        ct[el].className = "ct_ma";
+                    } else {
+                        ct[el].className = "ct_wh";
+                    }
                     $("#error").hide();
                     $("#resultHolder"+el).show();
                     $("#divClassTable"+el).show();
@@ -73,7 +87,8 @@ function init() {
     });
 
     $("#submitBtn").on('click', function (e) {
-        dz.processQueue();		
+        dz.processQueue();
+        ct.classList.remove("ct_jb");	
     });
 }
 
