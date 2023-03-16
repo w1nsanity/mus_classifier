@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "program": "C:/Users/79173/Desktop/mus_classifier/server/server.py",
+            "cwd": "C:/Users/79173/Desktop/mus_classifier/server/"
+        },
+        {
+            "name": "Python: File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "C:/Users/79173/Desktop/mus_classifier/server/"
+        }
+    ]
+}
